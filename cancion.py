@@ -27,6 +27,11 @@ class Cancion:
         return self.__album
     
     def Reproducir(self):
+        print()
         print("Reproduciendo: " + self.__titulo)
         print("Artista: " + self.__artista)
         print("Almbum: " + self.__album)
+        print()
+            
+
+        

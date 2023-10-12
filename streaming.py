@@ -44,43 +44,44 @@ class Streaming:
             print("1. Crear cuenta")
             print("2. Acceder a una cuenta existente")
             print("3. Salir")
-            opcion = input("ingresa una opcion: ")
+            try:
+                print()
+                opcion = int(input("Ingresa una opcion: "))
+            except ValueError:
+                print("Error: No has ingresado un número entero válido.")
+                print()
+                opcion = 4
             
             cuentas = Cliente.getCuentas()
             if opcion == 1:
-                limite_de_cuentas = Cliente.getNumeroCuentasPermitidas()
-                cuentas_agregadas = Cliente.getNumeroCuentas()
-                if cuentas_agregadas <= limite_de_cuentas:
-                    nombre_cuenta_nueva = input("Ingresa el nombre de la cuenta nueva: ")
-                    if cuentas:
-                        for cuenta in cuentas:
-                            nombre_cuenta_almacenada = cuenta.getNombre()
-                            if nombre_cuenta_almacenada.lower() == nombre_cuenta_nueva.lower():
-                                print("Ya hay una cuenta registrada con ese nombre ")
-                            else:
-                                if plan_activo:
-                                    cuenta_nueva = Cuenta_usuario_paga
-                                    Cliente.AgregarCuenta(cuenta_nueva)
-                                    print("¡Cuenta creada exitosamente!")
-                                else:
-                                    cuenta_nueva = CuentaUsuarioGratuito
-                                    Cliente.AgregarCuenta(cuenta_nueva)
-                                    print("¡Cuenta creada exitosamente!")
-                    else:
-                        if plan_activo:
-                            cuenta_nueva = Cuenta_usuario_paga
-                            Cliente.AgregarCuenta(cuenta_nueva)
-                            print("¡Cuenta creada exitosamente!")
+                nombre_cuenta_nueva = input("Ingresa el nombre de la cuenta nueva: ")
+                if cuentas:
+                    for cuenta in cuentas:
+                        nombre_cuenta_almacenada = cuenta.getNombre()
+                        if nombre_cuenta_almacenada.lower() == nombre_cuenta_nueva.lower():
+                            print("Ya hay una cuenta registrada con ese nombre ")
+                            print()
                         else:
-                            cuenta_nueva = CuentaUsuarioGratuito
-                            Cliente.AgregarCuenta(cuenta_nueva)
-                            print("¡Cuenta creada exitosamente!")
+                            if plan_activo:
+                                cuenta_nueva = Cuenta_usuario_paga(nombre_cuenta_nueva)
+                                Cliente.AgregarCuenta(cuenta_nueva)
+                        
+                            else:
+                                cuenta_nueva = CuentaUsuarioGratuito(nombre_cuenta_nueva)
+                                Cliente.AgregarCuenta(cuenta_nueva)
                 else:
-                    print("SE alcanzo el limite maximo de cuentas permitidas")
+                    if plan_activo:
+                        cuenta_nueva = Cuenta_usuario_paga(nombre_cuenta_nueva)
+                        Cliente.AgregarCuenta(cuenta_nueva)
+                        
+                    else:
+                        cuenta_nueva = CuentaUsuarioGratuito(nombre_cuenta_nueva)
+                        Cliente.AgregarCuenta(cuenta_nueva)
                 
             elif opcion == 2:
-                if cuentas:
+                try:
                     nombre_cuenta_acceso = input("Ingresa el nombre de la cuenta: ")
+                    print()
                     cuenta_encontrada = False
                     for cuenta in cuentas:
                         nombre_cuenta_almacenada = cuenta.getNombre()
@@ -97,28 +98,62 @@ class Streaming:
                             print("4. Buscar en lista de reproduccion")
                             print("5. Crear lista de reproduccion")
                             print("6. Cerrar sesion")
-                            opcion = input("ingresa una opcion")
+                            try:
+                                print()
+                                opcion = int(input("Ingresa una opcion: "))
+                                print()
+                            except ValueError:
+                                print("Error: No has ingresado un número entero válido.")
+                                print()
+                                opcion = 7
                             if opcion ==1:
                                 titulo_a_buscar = input("Ingresa el titulo de la cancion: ")
-                                for cancion in self.__catalogo:
-                                    titulo = cancion.getTitulo()
-                                    if titulo_a_buscar.lower() == titulo.lower():
-                                        cancion.Reproducir()
-                                    else:
+                                print()
+                                
+                                try:
+                                    for cancion in self.__catalogo:
+                                        titulo = cancion.getTitulo()
+                                        if titulo_a_buscar.lower() == titulo.lower():
+                                            cancion_encontrada = cancion
+                                    if not cancion_encontrada:
                                         print("El titulo no se encuentra")
+                                    salir_cancion = False
+                                    while not salir_cancion:
+                                        cancion_encontrada.Reproducir()
+                                        print("Opciones")
+                                        print("1. Agregar a lista de reproduccion")
+                                        print("2. Stop")
+                                        print()
+                                        try:
+                                            opcion = int(input("Ingresa una opcion"))
+                                            print()
+                                            if opcion == 1:
+                                                cuenta_abierta.AgregarCancion(cancion_encontrada)
+                                            elif opcion == 2:
+                                                salir_cancion = True
+                                        except ValueError:
+                                            print("Error: No has ingresado una opcion valida, intenta de nuevo.")
+                                except IndexError:
+                                    print("El catalogo esta vacio.")
+                                    
+                                
                                         
                             elif opcion == 2:
                                 artista_a_buscar = input("Ingresa el artista de la cancion: ")
                                 canciones_artista = []
                                 artista_encontrado = False
-                                for cancion in self.__catalogo:
-                                    artista = cancion.getArtista()
-                                    if artista_a_buscar.lower() == artista.lower():
-                                        canciones_artista.append(cancion)
-                                        artista_encontrado = True
-                                        cancion.Reproducir()
-                                    else:
-                                        print("El Artista no se encuentra")
+                                try:
+                                    for cancion in self.__catalogo:
+                                        artista = cancion.getArtista()
+                                        if artista_a_buscar.lower() == artista.lower():
+                                            canciones_artista.append(cancion)
+                                            artista_encontrado = True
+                                    if not canciones_artista:
+                                        print("El Artista no se encontro")
+                                except IndexError:
+                                    print("El catalogo esta vacio.")
+                                    print()
+                                
                                 
                                 if artista_encontrado and canciones_artista:       
                                     print("Canciones disponibles ")
@@ -126,24 +161,47 @@ class Streaming:
                                         titulo = cancion_artista.getTitulo()
                                         print(titulo)
                                     titulo_a_buscar = input("Ingresa el titulo de la cancion: ")
+                                    print()
                                     for cancion in canciones_artista:
                                         titulo = cancion.getTitulo()
                                         if titulo_a_buscar.lower() == titulo.lower():
-                                            cancion.Reproducir()
-                                        else:
-                                            print("El titulo no se encuentra")
+                                            cancion_encontrada = cancion
+                                    if not cancion_encontrada:
+                                        print("El titulo no se encuentra")
+                                    salir_cancion = False
+                                    while not salir_cancion:
+                                        cancion_encontrada.Reproducir()
+                                        print("Opciones")
+                                        print("1. Agregar a lista de reproduccion")
+                                        print("2. Stop")
+                                        print()
+                                        try:
+                                            opcion = int(input("Ingresa una opcion"))
+                                            print()
+                                            if opcion == 1:
+                                                cuenta_abierta.AgregarCancion(cancion_encontrada)
+                                            elif opcion == 2:
+                                                salir_cancion = True
+                                        except ValueError:
+                                            print("Error: No has ingresado una opcion valida, intenta de nuevo.")
                                             
                             elif opcion == 3:
-                                album_a_buscar = input("Ingresa el album: ")
+                                album_a_buscar = input("Ingresa el nombre del album: ")
+                                print()
                                 canciones_album = []
                                 album_encontrado = False
-                                for cancion in self.__catalogo:
-                                    album = cancion.getAlbum()
-                                    if album_a_buscar.lower() == album.lower():
-                                        canciones_album.append(cancion)
-                                        album_encontrado_encontrado = True
-                                    else:
-                                        print("El Album no se encuentra")
+                                try:
+                                    for cancion in self.__catalogo:
+                                        album = cancion.getAlbum()
+                                        if album_a_buscar.lower() == album.lower():
+                                            canciones_album.append(cancion)
+                                            album_encontrado = True
+                                    if not canciones_album:
+                                            print("El Album no se encontro")
+                                except IndexError:
+                                    print("El catalogo esta vacio.")
+                                    print()
+                                
                                 
                                 if album_encontrado and canciones_album:       
                                     print("Canciones disponibles ")
@@ -151,25 +209,46 @@ class Streaming:
                                         titulo = cancion_album.getTitulo()
                                         print(titulo)
                                     titulo_a_buscar = input("Ingresa el titulo de la cancion: ")
+                                    print()
                                     for cancion in canciones_album:
                                         titulo = cancion.getTitulo()
                                         if titulo_a_buscar.lower() == titulo.lower():
-                                            cancion.Reproducir()
-                                        else:
-                                            print("El titulo no se encuentra")
+                                            cancion_encontrada = cancion
+                                    if not cancion_encontrada:
+                                        print("El titulo no se encuentra")
+                                    salir_cancion = False
+                                    while not salir_cancion:
+                                        cancion_encontrada.Reproducir()
+                                        print("Opciones")
+                                        print("1. Agregar a lista de reproduccion")
+                                        print("2. Stop")
+                                        print()
+                                        try:
+                                            opcion = int(input("Ingresa una opcion"))
+                                            print()
+                                            if opcion == 1:
+                                                cuenta_abierta.AgregarCancion(cancion_encontrada)
+                                            elif opcion == 2:
+                                                salir_cancion = True
+                                        except ValueError:
+                                            print("Error: No has ingresado una opcion valida, intenta de nuevo.")
                             elif opcion == 4:
                                 titulo_lista_a_buscar = input("Ingresa el titulo de la lista: ")
+                                print()
                                 lista_reproduccion = cuenta_abierta.getListaReproduccion(titulo_lista_a_buscar)
                                 if lista_reproduccion:
                                     titulo_a_buscar = input("Ingresa el titulo de la cancion: ")
+                                    print()
                                     for cancion in lista_reproduccion:
                                         titulo = cancion.getTitulo()
                                         if titulo_a_buscar.lower() == titulo.lower():
-                                            cancion.Reproducir()
-                                        else:
-                                            print("El titulo no se encuentra")
+                                            cancion_encontrada = cancion
+                                    if not cancion_encontrada:
+                                        print("El titulo no se encuentra")
+                                    cancion_encontrada.Reproducir()
                                 else:
-                                    print("Lalista de reproduccion esta vacia")
+                                    print("L alista de reproduccion esta vacia")
+                                    print()
                                 
                             elif opcion == 5:
                                 cuenta_abierta.CrearListaDeReproduccion()
@@ -179,19 +258,24 @@ class Streaming:
                                 
                             else:
                                 print("opcion invalida, intenta de nuevo")
+                                print()
                     else:
                         print("No existe una cuenta con ese nombre")
-                else:
+                        print()
+                except IndexError:
                     print("No hay cuentas existentes")
+                    print()
             elif opcion ==3:
                 Salir = True
                 
             else:
                 print("La opcion es invalida, intenta de nuevo")
+                print()
                         
                         
     def MenúContratarPlan(self):
         Salir = False
+        print()
         print("Planes disponibles: ")
         print("1. Gratuito")
         print("     Una cuenta con anuncios")
@@ -201,23 +285,44 @@ class Streaming:
         print("     Una cuenta, sin anuncios, decuento del 30%")
         print("4. Familiar")
         print("     Seis cuentas, sin anuncios")
-        tipo_plan = input("¿Que tipo de plan desea Contratar?")
+        print()
+        try:
+            print()
+            tipo_plan = int(input("Ingresa una opcion: "))
+        except ValueError:
+            print("Error: No has ingresado un número entero válido.")
+            print()
+            tipo_plan = 5
+            
         if tipo_plan == 1:
-            nombre_cliente = input("ingresa el nombre del usuario")
+            nombre_cliente = input("ingresa el nombre del usuario: ")
+            print()
             cliente_nuevo = Cliente(nombre_cliente, "Gratuito", 1, True)
             self.__clientes.append(cliente_nuevo)
+            print("Plan contratado")
+            print()
         elif tipo_plan == 2:
-            nombre_cliente = input("ingresa el nombre del usuario")
+            nombre_cliente = input("ingresa el nombre del usuario: ")
+            print()
             cliente_nuevo = Cliente(nombre_cliente, "Individual", 1, False)
             self.__clientes.append(cliente_nuevo)
+            print("Plan contratado")
+            print()
         elif tipo_plan == 3:
-            nombre_cliente = input("ingresa el nombre del usuario")
+            nombre_cliente = input("ingresa el nombre del usuario: ")
+            print()
             cliente_nuevo = Cliente(nombre_cliente, "Estudiantes", 1, False)
             self.__clientes.append(cliente_nuevo)
+            print("Plan contratado")
+            print()
         elif tipo_plan == 4:
-            nombre_cliente = input("ingresa el nombre del usuario")
+            nombre_cliente = input("ingresa el nombre del usuario: ")
+            print()
             cliente_nuevo = Cliente(nombre_cliente, "Familiar", 1, False)
             self.__clientes.append(cliente_nuevo)
+            print("Plan contratado")
+            print()
         else:
             print("La opcion es invalida")
+            print()
             
