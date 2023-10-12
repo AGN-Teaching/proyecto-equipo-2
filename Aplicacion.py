@@ -24,16 +24,19 @@ def Main():
             print()
             opcion = 4
         if opcion == 1:
-            if lista_clientes:
+            if (lista_clientes) > 0:
                 nombre_Cliente_a_buscar = input("Ingresa el nombre del usuario: ")
                 print()
+                usuario_existe = False
                 for Cliente in lista_clientes:
                     nombre_cliente = Cliente.getNombre()
                     if nombre_Cliente_a_buscar.lower() == nombre_cliente.lower():
                         Servicio.MenuPlan(Cliente)
-                    else:
-                        print("El usuario no existe")
-                        print()
+                        usuario_existe = True
+                        
+                if usuario_existe:
+                    print("El usuario no existe")
+                    print()
             else:
                 print("No hay usuarios registrados")
                 print()

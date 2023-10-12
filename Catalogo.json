@@ -1,0 +1,182 @@
+[
+    {
+        "titulo": "Shape of You",
+        "duracion": "3:53",
+        "artista": "Ed Sheeran",
+        "album": "÷ (Divide)"
+    },
+    {
+        "titulo": "Bohemian Rhapsody",
+        "duracion": "5:55",
+        "artista": "Queen",
+        "album": "A Night at the Opera"
+    },
+    {
+        "titulo": "Wonderwall",
+        "duracion": "4:18",
+        "artista": "Oasis",
+        "album": "(What's the Story) Morning Glory?"
+    },
+    {
+        "titulo": "Billie Jean",
+        "duracion": "4:54",
+        "artista": "Michael Jackson",
+        "album": "Thriller"
+    },
+    {
+        "titulo": "Hotel California",
+        "duracion": "6:30",
+        "artista": "Eagles",
+        "album": "Hotel California"
+    },
+    {
+        "titulo": "Imagine",
+        "duracion": "3:03",
+        "artista": "John Lennon",
+        "album": "Imagine"
+    },
+    {
+        "titulo": "Like a Rolling Stone",
+        "duracion": "6:13",
+        "artista": "Bob Dylan",
+        "album": "Highway 61 Revisited"
+    },
+    {
+        "titulo": "Uptown Funk",
+        "duracion": "4:30",
+        "artista": "Mark Ronson ft. Bruno Mars",
+        "album": "Uptown Special"
+    },
+    {
+        "titulo": "Yesterday",
+        "duracion": "2:05",
+        "artista": "The Beatles",
+        "album": "Help!"
+    },
+    {
+        "titulo": "Purple Haze",
+        "duracion": "2:50",
+        "artista": "Jimi Hendrix",
+        "album": "Are You Experienced"
+    },
+    {
+        "titulo": "Smells Like Teen Spirit",
+        "duracion": "5:01",
+        "artista": "Nirvana",
+        "album": "Nevermind"
+    },
+    {
+        "titulo": "Rolling in the Deep",
+        "duracion": "3:48",
+        "artista": "Adele",
+        "album": "21"
+    },
+    {
+        "titulo": "Dancing Queen",
+        "duracion": "3:50",
+        "artista": "ABBA",
+        "album": "Arrival"
+    },
+    {
+        "titulo": "Sweet Child o' Mine",
+        "duracion": "5:55",
+        "artista": "Guns N' Roses",
+        "album": "Appetite for Destruction"
+    },
+    {
+        "titulo": "Every Breath You Take",
+        "duracion": "4:13",
+        "artista": "The Police",
+        "album": "Synchronicity"
+    },
+    {
+        "titulo": "Purple Rain",
+        "duracion": "8:41",
+        "artista": "Prince",
+        "album": "Purple Rain"
+    },
+    {
+        "titulo": "Under Pressure",
+        "duracion": "4:08",
+        "artista": "Queen & David Bowie",
+        "album": "Hot Space"
+    },
+    {
+        "titulo": "Don't Stop Believin'",
+        "duracion": "4:11",
+        "artista": "Journey",
+        "album": "Escape"
+    },
+    {
+        "titulo": "Hey Jude",
+        "duracion": "7:11",
+        "artista": "The Beatles",
+        "album": "The Beatles (White Album)"
+    },
+    {
+        "titulo": "Livin' on a Prayer",
+        "duracion": "4:10",
+        "artista": "Bon Jovi",
+        "album": "Slippery When Wet"
+    },
+    {
+        "titulo": "Thriller",
+        "duracion": "5:58",
+        "artista": "Michael Jackson",
+        "album": "Thriller"
+    },
+    {
+        "titulo": "Wonderful Tonight",
+        "duracion": "3:41",
+        "artista": "Eric Clapton",
+        "album": "Slowhand"
+    },
+    {
+        "titulo": "All You Need Is Love",
+        "duracion": "3:48",
+        "artista": "The Beatles",
+        "album": "Magical Mystery Tour"
+    },
+    {
+        "titulo": "Let It Be",
+        "duracion": "4:03",
+        "artista": "The Beatles",
+        "album": "Let It Be"
+    },
+    {
+        "titulo": "Bohemian Rhapsody",
+        "duracion": "5:55",
+        "artista": "Queen",
+        "album": "A Night at the Opera"
+    },
+    {
+        "titulo": "Rocket Man",
+        "duracion": "4:41",
+        "artista": "Elton John",
+        "album": "Honky Château"
+    },
+    {
+        "titulo": "Imagine",
+        "duracion": "3:03",
+        "artista": "John Lennon",
+        "album": "Imagine"
+    },
+    {
+        "titulo": "My Way",
+        "duracion": "4:35",
+        "artista": "Frank Sinatra",
+        "album": "My Way"
+    },
+    {
+        "titulo": "Hotel California",
+        "duracion": "6:30",
+        "artista": "Eagles",
+        "album": "Hotel California"
+    },
+    {
+        "titulo": "Piano Man",
+        "duracion": "5:38",
+        "artista": "Billy Joel",
+        "album": "Piano Man"
+    }
+   ]
