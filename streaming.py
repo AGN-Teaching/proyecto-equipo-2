@@ -134,7 +134,7 @@ class Streaming:
                             for cancion_artista in canciones_artista:
                                 titulo = cancion_artista.getTitulo()
                                 print(titulo)
-                            titulo_a_buscar = input("Ingresa el titulo de la cancion: ") # pide el nombre de la cancion a encontrar
+                            titulo_a_buscar = str(input("Ingresa el titulo de la cancion: ")) # pide el nombre de la cancion a encontrar
                             print()
                             busqueda_existosa = False # Variable de busqueda por titulo
                             for cancion in canciones_artista: # Busca en las canciones que comparten artista 
@@ -153,7 +153,7 @@ class Streaming:
                         print()   
                                         
                 elif opcion == 3:
-                    album_a_buscar = input("Ingresa el nombre del album: ")
+                    album_a_buscar = st(input("Ingresa el nombre del album: "))
                     print()
                     canciones_album = []
                     busqueda_album_exitosa = False
@@ -168,7 +168,7 @@ class Streaming:
                             for cancion_album in canciones_album:
                                 titulo = cancion_album.getTitulo()
                                 print(titulo)
-                            titulo_a_buscar = input("Ingresa el titulo de la cancion: ")
+                            titulo_a_buscar = str(input("Ingresa el titulo de la cancion: "))
                             print()
                             busqueda_existosa = False
                             for cancion in canciones_album:
@@ -203,7 +203,7 @@ class Streaming:
                             print("Canciones disponibles: ")
                             for cancion in lista_reproduccion:
                                 titulo_cancion = cancion.getTitulo()
-                                print(titulo)
+                                print(titulo_cancion)
                             print()
                             titulo_a_buscar = input("Ingresa el titulo de la cancion: ")
                             print()
