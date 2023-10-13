@@ -1,7 +1,3 @@
-from cuenta_usuario_gratuito import CuentaUsuarioGratuito
-from cuenta_usuario_paga import Cuenta_usuario_paga
-from cancion import Cancion
-from cliente import Cliente
 from streaming import Streaming
 
 
@@ -24,7 +20,7 @@ def Main():
             print()
             opcion = 4
         if opcion == 1:
-            if (lista_clientes) > 0:
+            if len(lista_clientes) > 0:
                 nombre_Cliente_a_buscar = input("Ingresa el nombre del usuario: ")
                 print()
                 usuario_existe = False

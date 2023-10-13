@@ -29,12 +29,14 @@ class Cliente():
         self.__paga = paga
         
     def AgregarCuenta(self, cuenta):
-        if self.__numero_de_cuentas_almacenadas <= self.__numero_de_cuentas_permitidas:
+        if self.__numero_de_cuentas_almacenadas < self.__numero_de_cuentas_permitidas:
             self.__cuentas_plan.append(cuenta)
             self.__numero_de_cuentas_almacenadas = self.__numero_de_cuentas_almacenadas + 1
             print("¡Cuenta creada exitosamente!")
+            print()
         else:
           print("Se alcanzo el limite de cuentas, no se puede crear una cuenta nueva")
+          print()
         
     def EliminarCuenta(self, cuenta):
         self.__cuentas_plan.remove(cuenta)
