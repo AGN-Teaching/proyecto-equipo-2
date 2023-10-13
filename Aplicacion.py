@@ -30,7 +30,7 @@ def Main():
                         Servicio.MenuPlan(Cliente)
                         usuario_existe = True
                         
-                if usuario_existe:
+                if not usuario_existe:
                     print("El usuario no existe")
                     print()
             else:

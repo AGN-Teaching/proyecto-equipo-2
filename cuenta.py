@@ -36,12 +36,12 @@ class Cuenta():
                                 lista_encontrada = True
                                 lista = elemento["lista"]
                                 lista.append(cancion)
-                            else:
-                                print("La lista no se encuentra")
-                            if lista_encontrada:
-                                print("¡Cancion agregada exitosamente!")
-                                print()
-                                Salir = True
+                        if lista_encontrada:
+                            print("¡Cancion agregada exitosamente!")
+                            print()
+                            Salir = True
+                        else:
+                            print("La lista no se encuentra")
                     else:
                         print("No hay listas de reproduccion, crea una nueva")
                         print()

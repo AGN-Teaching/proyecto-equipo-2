@@ -57,11 +57,11 @@ class Streaming:
         
         salir_reproductor = False  # Variable para salir del reproductor
         while not salir_reproductor:
-            
             numero_anuncio = random.randint(0, 9) # Genera un numero aleatorio para elegir un anuncio 
             anuncio = cuenta.getAnuncio() # Recibe si la cuenta debe ver anuncios
             if anuncio: # Evalua si la cuenta debe ver anuncios
-                print(self.__anuncios[numero_anuncio]) # imprime un anuncio
+                anuncio_imprimir = self.__anuncios[numero_anuncio]
+                print(anuncio_imprimir) # imprime un anuncio
                 print()
             # Reproduce la cancion recibida
             cancion.Reproducir()
