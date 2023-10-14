@@ -1,8 +1,8 @@
 class Cancion:
     # Método constructor de la clase Canción, inicializa los atributos compartidos de las canciones
     def __init__(self, titulo, duracion, artista, album):
-        self.__duracion = duracion
         self.__titulo = titulo  # Título de la canción
+        self.__duracion = duracion # duracion de la cancion
         self.__artista = artista  # Artista de la canción
         self.__album = album  # Álbum de la canción
 

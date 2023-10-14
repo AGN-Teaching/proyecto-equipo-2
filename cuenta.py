@@ -1,8 +1,6 @@
 class Cuenta():
-
-    def __init__(self, nombre, anuncio):
-        # Constructor: inicializa la cuenta con nombre y anuncio
-        self.__anuncio = anuncio
+    # Constructor: inicializa los atributos
+    def __init__(self, nombre):
         self.__nombre = nombre
         self.__listas_de_reproduccion = []
 
@@ -21,17 +19,17 @@ class Cuenta():
                 print()
                 if opcion == 1:
                     # Agregar a lista de reproducción existente
-                    if len(self.__listas_de_reproduciion) > 0:
+                    if len(self.__listas_de_reproduccion) > 0:
                         print("Listas disponibles")
                         # Mostrar las listas de reproducción existentes
-                        for elemento in self.__listas_de_reproduciion:
+                        for elemento in self.__listas_de_reproduccion:
                             nombre_lista = elemento.get("nombre")
                             print(nombre_lista)
                         print()
                         nombre_lista_de_reproduccion_a_buscar = input("Ingresa el nombre de la lista: ")
                         print()
                         lista_encontrada = False
-                        for elemento in self.__listas_de_reproduciion:
+                        for elemento in self.__listas_de_reproduccion:
                             nombre_lista = elemento["nombre"]
                             if nombre_lista_de_reproduccion_a_buscar.lower() == nombre_lista.lower():
                                 lista_encontrada = True
@@ -51,14 +49,14 @@ class Cuenta():
                     nombre_lista_nueva = input("Ingresa el nombre de la lista nueva: ")
                     print()
                     nombre_lista_disponible = True
-                    for lista in self.__listas_de_reproduciion:
+                    for lista in self.__listas_de_reproduccion:
                         nombre_lista_a_comparar = lista["nombre"]
                         if nombre_lista_nueva.lower() == nombre_lista_a_comparar.lower():
                             nombre_lista_disponible = False
                     if nombre_lista_disponible:
                         lista_nueva = []
                         lista_nueva.append(cancion)
-                        self.__listas_de_reproduciion.append({"nombre": nombre_lista_nueva, "lista": lista_nueva})
+                        self.__listas_de_reproduccion.append({"nombre": nombre_lista_nueva, "lista": lista_nueva})
                         print("Canción agregada a la lista nueva")
                         print()
                     else:
@@ -79,13 +77,13 @@ class Cuenta():
         nombre_lista_nueva = input("Ingresa el nombre de la lista nueva: ")
         print()
         nombre_lista_disponible = True
-        for lista in self.__listas_de_reproduciion:
+        for lista in self.__listas_de_reproduccion:
             nombre_lista_a_comparar = lista["nombre"]
             if nombre_lista_nueva.lower() == nombre_lista_a_comparar.lower():
                 nombre_lista_disponible = False
         if nombre_lista_disponible:
             lista_nueva = []
-            self.__listas_de_reproduciion.append({"nombre": nombre_lista_nueva, "lista": lista_nueva})
+            self.__listas_de_reproduccion.append({"nombre": nombre_lista_nueva, "lista": lista_nueva})
             print("Lista creada exitosamente!")
             print()
         else:
@@ -93,22 +91,18 @@ class Cuenta():
             print("El nombre de la lista está ocupado")
             print()
 
-    def getAnuncio(self):
-        # Método para obtener el anuncio de la cuenta
-        return self.__anuncio
-
     def getNombre(self):
         # Método para obtener el nombre de la cuenta
         return self.__nombre
 
     def getListasDeReproduccion(self):
         # Método para obtener una lista de todas las listas de reproducción
-        return self.__listas_de_reproduciion
+        return self.__listas_de_reproduccion
 
     def getListaReproduccion(self, nombre_lista_a_buscar):
         # Método para obtener una lista de reproducción específica en función de su nombre
         lista_a_retornar = []
-        for elemento in self.__listas_de_reproduciion:
+        for elemento in self.__listas_de_reproduccion:
             nombre_lista = elemento.get("nombre")
             if nombre_lista_a_buscar.lower() == nombre_lista.lower():
                 lista_a_retornar = elemento.get("lista")

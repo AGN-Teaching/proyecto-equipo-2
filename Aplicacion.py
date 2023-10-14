@@ -16,8 +16,14 @@ def Main():
     # Comienza un bucle while que se ejecutará hasta que 'Salir' sea True
     while not Salir:
         # Obtiene una lista de clientes desde el servicio de streaming
-        lista_clientes = Servicio.getClientes()
-
+        lista_clientes = Servicio.getClientes() # Imprime si hay clientes disponibles
+        if len(lista_clientes) > 0:
+                print("Clientes: " )
+                for cliente in lista_clientes:
+                    nombre_cliente = cliente.getNombre()
+                    plan_cliente = cliente.getTipoPlan()
+                    print(nombre_cliente + "    Plan " + plan_cliente)
+                print()
         # Muestra un menú principal en la consola
         print("Menú Principal")
         print("1. Acceder con usuario")
@@ -39,7 +45,21 @@ def Main():
         # Verifica la opción seleccionada por el usuario
         if opcion == 1:
             # Comprueba si hay clientes registrados
+            contenido_en_lista = False
             if len(lista_clientes) > 0:
+                contenido_en_lista = True
+            else:
+                # Si no hay usuarios registrados, muestra un mensaje correspondiente
+                print("No hay usuarios registrados")
+                print()
+                
+            if contenido_en_lista:
+                print("Lista Clientes: " )
+                for cliente in lista_clientes:
+                    nombre_cliente = cliente.getNombre()
+                    plan_cliente = cliente.getTipoPlan()
+                    print(nombre_cliente)
+                print()
                 # Solicita al usuario que ingrese el nombre del cliente a buscar
                 nombre_Cliente_a_buscar = input("Ingresa el nombre del usuario: ")
                 print()
@@ -59,10 +79,7 @@ def Main():
                 if not usuario_existe:
                     print("El usuario no existe")
                     print()
-            else:
-                # Si no hay usuarios registrados, muestra un mensaje correspondiente
-                print("No hay usuarios registrados")
-                print()
+                    
         elif opcion == 2:
             # Si la opción es 2, llama a una función llamada 'MenúContratarPlan' en el servicio de streaming
             Servicio.MenúContratarPlan()
