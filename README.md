@@ -5,8 +5,8 @@ Alan Torres Aguilar 2223028388
 
 Gustavo Angel Morales Vigi 2223029054
 
-DISEÑO:
-
+DIAGRAMA:
+https://github.com/AGN-Teaching/proyecto-equipo-2/issues/2#issue-1944381817
 
 Informe sobre el Sistema de Streaming de Música
 Introducción
