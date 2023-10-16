@@ -1,0 +1,423 @@
+[
+	{
+		"titulo": "Love Story",
+		"duracion": "3:56",
+		"artista": "Taylor Swift",
+		"album": "Fearless"
+	},
+	{
+		"titulo": "Blank Space",
+		"duracion": "3:51",
+		"artista": "Taylor Swift",
+		"album": "1989"
+	},
+	{
+		"titulo": "Shake It Off",
+		"duracion": "3:39",
+		"artista": "Taylor Swift",
+		"album": "1989"
+	},
+	{
+		"titulo": "You Belong with Me",
+		"duracion": "3:51",
+		"artista": "Taylor Swift",
+		"album": "Fearless"
+	},
+	{
+		"titulo": "I Knew You Were Trouble",
+		"duracion": "3:39",
+		"artista": "Taylor Swift",
+		"album": "Red"
+	},
+	{
+		"titulo": "Style",
+		"duracion": "3:51",
+		"artista": "Taylor Swift",
+		"album": "1989"
+	},
+	{
+		"titulo": "Wildest Dreams",
+		"duracion": "3:40",
+		"artista": "Taylor Swift",
+		"album": "1989"
+	},
+	{
+		"titulo": "Delicate",
+		"duracion": "3:52",
+		"artista": "Taylor Swift",
+		"album": "Reputation"
+	},
+	{
+		"titulo": "Lover",
+		"duracion": "3:41",
+		"artista": "Taylor Swift",
+		"album": "Lover"
+	},
+	{
+		"titulo": "Cardigan",
+		"duracion": "4:00",
+		"artista": "Taylor Swift",
+		"album": "Folklore"
+	},
+	{
+		"titulo": "Hello",
+		"duracion": "4:55",
+		"artista": "Adele",
+		"album": "25"
+	},
+	{
+		"titulo": "Rolling in the Deep",
+		"duracion": "3:48",
+		"artista": "Adele",
+		"album": "21"
+	},
+	{
+		"titulo": "Someone Like You",
+		"duracion": "4:45",
+		"artista": "Adele",
+		"album": "21"
+	},
+	{
+		"titulo": "Set Fire to the Rain",
+		"duracion": "4:03",
+		"artista": "Adele",
+		"album": "21"
+	},
+	{
+		"titulo": "When We Were Young",
+		"duracion": "4:51",
+		"artista": "Adele",
+		"album": "25"
+	},
+	{
+		"titulo": "Skyfall",
+		"duracion": "4:46",
+		"artista": "Adele",
+		"album": "Skyfall - Single"
+	},
+	{
+		"titulo": "Send My Love (To Your New Lover)",
+		"duracion": "3:43",
+		"artista": "Adele",
+		"album": "25"
+	},
+	{
+		"titulo": "Chasing Pavements",
+		"duracion": "3:31",
+		"artista": "Adele",
+		"album": "19"
+	},
+	{
+		"titulo": "Water Under the Bridge",
+		"duracion": "3:58",
+		"artista": "Adele",
+		"album": "25"
+	},
+	{
+		"titulo": "Turning Tables",
+		"duracion": "4:10",
+		"artista": "Adele",
+		"album": "21"
+	},
+	{
+		"titulo": "Bohemian Rhapsody",
+		"duracion": "5:55",
+		"artista": "Queen",
+		"album": "A Night at the Opera"
+	},
+	{
+		"titulo": "Another One Bites the Dust",
+		"duracion": "3:36",
+		"artista": "Queen",
+		"album": "The Game"
+	},
+	{
+		"titulo": "Somebody to Love",
+		"duracion": "4:56",
+		"artista": "Queen",
+		"album": "A Day at the Races"
+	},
+	{
+		"titulo": "We Will Rock You",
+		"duracion": "2:02",
+		"artista": "Queen",
+		"album": "News of the World"
+	},
+	{
+		"titulo": "Radio Ga Ga",
+		"duracion": "5:50",
+		"artista": "Queen",
+		"album": "The Works"
+	},
+	{
+		"titulo": "Under Pressure",
+		"duracion": "4:04",
+		"artista": "Queen",
+		"album": "Hot Space"
+	},
+	{
+		"titulo": "Don't Stop Me Now",
+		"duracion": "3:29",
+		"artista": "Queen",
+		"album": "Jazz"
+	},
+	{
+		"titulo": "I Want to Break Free",
+		"duracion": "4:18",
+		"artista": "Queen",
+		"album": "The Works"
+	},
+	{
+		"titulo": "Somebody to Love (Live)",
+		"duracion": "5:07",
+		"artista": "Queen",
+		"album": "Live Killers"
+	},
+	{
+		"titulo": "The Show Must Go On",
+		"duracion": "4:32",
+		"artista": "Queen",
+		"album": "Innuendo"
+	},
+	{
+		"titulo": "Crazy in Love",
+		"duracion": "3:56",
+		"artista": "Beyoncé",
+		"album": "Dangerously In Love"
+	},
+	{
+		"titulo": "Halo",
+		"duracion": "4:22",
+		"artista": "Beyoncé",
+		"album": "I Am... Sasha Fierce"
+	},
+	{
+		"titulo": "Single Ladies (Put a Ring on It)",
+		"duracion": "3:13",
+		"artista": "Beyoncé",
+		"album": "I Am... Sasha Fierce"
+	},
+	{
+		"titulo": "Irreplaceable",
+		"duracion": "3:48",
+		"artista": "Beyoncé",
+		"album": "B'Day"
+	},
+	{
+		"titulo": "Love On Top",
+		"duracion": "4:27",
+		"artista": "Beyoncé",
+		"album": "4"
+	},
+	{
+		"titulo": "If I Were a Boy",
+		"duracion": "4:09",
+		"artista": "Beyoncé",
+		"album": "I Am... Sasha Fierce"
+	},
+	{
+		"titulo": "Drunk in Love",
+		"duracion": "5:24",
+		"artista": "Beyoncé",
+		"album": "Beyoncé"
+	},
+	{
+		"titulo": "Run the World (Girls)",
+		"duracion": "3:56",
+		"artista": "Beyoncé",
+		"album": "4"
+	},
+	{
+		"titulo": "Formation",
+		"duracion": "3:26",
+		"artista": "Beyoncé",
+		"album": "Lemonade"
+	},
+	{
+		"titulo": "XO",
+		"duracion": "3:36",
+		"artista": "Beyoncé",
+		"album": "Beyoncé"
+	},
+	{
+		"titulo": "Billie Jean",
+		"duracion": "4:53",
+		"artista": "Michael Jackson",
+		"album": "Thriller"
+	},
+	{
+		"titulo": "Beat It",
+		"duracion": "4:17",
+		"artista": "Michael Jackson",
+		"album": "Thriller"
+	},
+	{
+		"titulo": "Thriller",
+		"duracion": "5:58",
+		"artista": "Michael Jackson",
+		"album": "Thriller"
+	},
+	{
+		"titulo": "Smooth Criminal",
+		"duracion": "4:17",
+		"artista": "Michael Jackson",
+		"album": "Bad"
+	},
+	{
+		"titulo": "Black or White",
+		"duracion": "4:15",
+		"artista": "Michael Jackson",
+		"album": "Dangerous"
+	},
+	{
+		"titulo": "Heal the World",
+		"duracion": "6:25",
+		"artista": "Michael Jackson",
+		"album": "Dangerous"
+	},
+	{
+		"titulo": "The Way You Make Me Feel",
+		"duracion": "4:57",
+		"artista": "Michael Jackson",
+		"album": "Bad"
+	},
+	{
+		"titulo": "Man in the Mirror",
+		"duracion": "5:19",
+		"artista": "Michael Jackson",
+		"album": "Bad"
+	},
+	{
+		"titulo": "Don't Stop 'Til You Get Enough",
+		"duracion": "5:55",
+		"artista": "Michael Jackson",
+		"album": "Off the Wall"
+	},
+	{
+		"titulo": "Rock with You",
+		"duracion": "3:40",
+		"artista": "Michael Jackson",
+		"album": "Off the Wall"
+	},
+	{
+		"titulo": "Conga",
+		"duracion": "4:14",
+		"artista": "Gloria Estefan",
+		"album": "Primitive Love"
+	},
+	{
+		"titulo": "Anything for You",
+		"duracion": "3:45",
+		"artista": "Gloria Estefan",
+		"album": "Let It Loose"
+	},
+	{
+		"titulo": "Rhythm Is Gonna Get You",
+		"duracion": "3:57",
+		"artista": "Gloria Estefan",
+		"album": "Let It Loose"
+	},
+	{
+		"titulo": "Turn the Beat Around",
+		"duracion": "3:53",
+		"artista": "Gloria Estefan",
+		"album": "Primitive Love"
+	},
+	{
+		"titulo": "Don't Wanna Lose You",
+		"duracion": "4:09",
+		"artista": "Gloria Estefan",
+		"album": "Cuts Both Ways"
+	},
+	{
+		"titulo": "Here We Are",
+		"duracion": "4:51",
+		"artista": "Gloria Estefan",
+		"album": "Cuts Both Ways"
+	},
+	{
+		"titulo": "Oye Mi Canto",
+		"duracion": "4:51",
+		"artista": "Gloria Estefan",
+		"album": "Let It Loose"
+	},
+	{
+		"titulo": "Mi Tierra",
+		"duracion": "4:37",
+		"artista": "Gloria Estefan",
+		"album": "Mi Tierra"
+	},
+	{
+		"titulo": "Words Get in the Way",
+		"duracion": "3:27",
+		"artista": "Gloria Estefan",
+		"album": "Primitive Love"
+	},
+	{
+		"titulo": "Reach",
+		"duracion": "3:47",
+		"artista": "Gloria Estefan",
+		"album": "Greatest Hits"
+	},
+	{
+		"titulo": "Querida",
+		"duracion": "3:42",
+		"artista": "Juan Gabriel",
+		"album": "Recuerdos II"
+	},
+	{
+		"titulo": "Hasta Que Te Conocí",
+		"duracion": "4:21",
+		"artista": "Juan Gabriel",
+		"album": "Recuerdos II"
+	},
+	{
+		"titulo": "Amor Eterno",
+		"duracion": "3:47",
+		"artista": "Juan Gabriel",
+		"album": "Juntos Otra Vez"
+	},
+	{
+		"titulo": "Querida (En Vivo)",
+		"duracion": "3:56",
+		"artista": "Juan Gabriel",
+		"album": "Los Gabriel... ¡Para Toda la Vida!"
+	},
+	{
+		"titulo": "Costumbres",
+		"duracion": "3:18",
+		"artista": "Juan Gabriel",
+		"album": "Querida"
+	},
+	{
+		"titulo": "Abrázame Muy Fuerte",
+		"duracion": "4:08",
+		"artista": "Juan Gabriel",
+		"album": "Abrázame Muy Fuerte"
+	},
+	{
+		"titulo": "No Tengo Dinero",
+		"duracion": "3:25",
+		"artista": "Juan Gabriel",
+		"album": "Recuerdos II"
+	},
+	{
+		"titulo": "Te Sigo Amando",
+		"duracion": "2:52",
+		"artista": "Juan Gabriel",
+		"album": "Juntos Otra Vez"
+	},
+	{
+		"titulo": "Así Fue",
+		"duracion": "4:48",
+		"artista": "Juan Gabriel",
+		"album": "Gracias Por Esperar"
+	},
+	{
+		"titulo": "La Diferencia",
+		"duracion": "3:31",
+		"artista": "Juan Gabriel",
+		"album": "Recuerdos II"
+	}
+]
+
