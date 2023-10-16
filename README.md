@@ -22,43 +22,52 @@ Listas de Reproducción Personalizadas: Los usuarios deben poder crear y gestion
 Diseño de la Solución
 La solución propuesta se basa en una arquitectura orientada a objetos
 
-Podemos destinar una clase para el manejo de las funciones en general, el uso de menús para mostrar las distintas opciones a los usuarios, ademas de contar con un catalogo general de musica, ademas que gestione los usuarios que contrataron el servicio de la aplicacion
+Podemos destinar una clase llamada Streaming para la Gestión de Usuarios y Cuentas ademas del manejo de las funciones en general con el uso de menús que permitan mostrarle al usuario una interfaz con la que pueda interactuar con el sistema, esto mediante metodos, uno de estos se destinaria al menú principal el cual permita contratar planes y acceder a usuarios existentes, otro menú cuando se accede al usuario para poder gestionar las cuentas y el ultimmo menu para cada cuenta, este permitiria hacer busquedas de musica por titulo de canción, artista, álbum y lista de reproducción . Esta clase puede contener el Catálogo de Música del sistema y una forma de poder acceder a ella mediante una busqueda, que, a como lo pide el problema esta se puede hacer mediante titulo de canción, artista, álbum, esto implica tener un metodo para la busqueda de cada atributo de la cancion, ademas de tener un reproductor para reproducir la musica contenida en el.
 
-La solucion consta de las siguientes clases principales:
+Para la musica se considera que se pueden hacer búsquedas por titulo de canción, artista, álbum y lista de reproducción, estos se considerarian como atributos de la canción, y con esto obtenermos la clase Cancion que ademas puede tener un metodo para reproducirse.
+
+Dado que cada cancion es un objeto, para el manejo del catalogo se usara un archivo JSON, que facilita guardar parametros para resuparar las intancias de una clase.
+
+Al conntratar un plan ya sea de tipo gratuito o premium, este debe estar asociado a un usuario, este usuario tiene la capacidad de crear cuentas/perfiles, y poder gestionalas, esto incluye poder almacenar, agregar nuevas cuentas y eliminarlas, ademas que dependiendo el plan contratado las cuentas pueden ser limitadas. Esstas caracteristicas podemos destinarlas a una clase llamada Cliente, que tambien debe tener un nombre, y saber si el cliente contrato el plan premium
+
+Para asignar propiedades al crear instancias de la clase Cliente como tipo de plan, numero de cuentas permitidas y si el plan es de paga, se creara la clase, Plan que tiene estas funciones, esto con el fin de facilitar el paso de los parametros al crear las intancias antes mencionadas, esta estrategia se implementaria al contratar nuevos planes.
+
+Podemos destinar una clase llamada Cuenta, la cual debe poder almaceanar listas de reproduccion y que tambien pueda agregar canciones en listas existentes y agregar a listas nuevas, tambien debe tener un metodo para buscar dentro de estas listas, ademas de mostrar notificaciones proporcionadas por el sistema
+
+
+
+Teniendo lo anterior podemos pasar a la contrucion de cada clase:
 
 Clase Streaming:
-Descripción: Esta clase es el corazón del sistema y coordina todas las operaciones. Gestiona clientes, el catálogo de música y la reproducción de canciones.
-Métodos y Funciones: Incluye métodos para crear cuentas de usuario, cargar el catálogo de canciones desde un archivo JSON y reproducir canciones.
+Descripción: Esta clase es el corazón del sistema y coordina todas las operaciones. Gestiona clientes, cuentas, notificaciones, funciones de busqueda en el catálogo de música y en listas de reproduccion, la reproducción de canciones y la gestion de anuncios.
+Métodos y Funciones: Incluye métodos para mostrar menús para contratar un plan, plan y para cada cuenta, crear cuentas de usuario, cargar el catálogo de canciones desde un archivo JSON, reproducir canciones y hacer las distintas busquedas por titulo de canción, artista y álbum .
 
 Clase Cliente:
 Descripción: Representa a los usuarios y sus planes de suscripción. Cada cliente puede tener múltiples cuentas.
-Métodos y Funciones: Permite la creación de cuentas y la gestión de planes de suscripción.
+Métodos y Funciones: Permite la creación y eliminacion de de cuentas y la gestión de planes de suscripción.
 
 Clase Cuenta:
-Descripción: Representa una cuenta de usuario individual y almacena información sobre las listas de reproducción, los anuncios y el plan de suscripción.
-Métodos y Funciones: Gestiona la creación de listas de reproducción, la reproducción de canciones y la gestión de anuncios.
+Descripción: Representa una cuenta de usuario individual y almacena información sobre las listas de reproducción.
+Métodos y Funciones: Gestiona la creación y eliminacion de listas de reproducción, agregar canciones y la busqueda de musica en sus listas de reproduccion.
 
 Clase Canción:
-Descripción: Representa una canción en el catálogo de música. Contiene detalles como título, artista y álbum.
-Métodos y Funciones: Facilita la búsqueda de canciones y su reproducción.
+Descripción: Representa una canción en el catálogo de música. Contiene detalles como título, duracion, artista y álbum.
+Métodos y Funciones: Reproducirse.
 
-Gestión de Anuncios:
-Descripción: Los anuncios se gestionan a través de la clase Streaming y se muestran a los usuarios en función de su plan de suscripción.
-
-Listas de Reproducción:
-Descripción: Las listas de reproducción se gestionan a través de la clase Cuenta. Los usuarios pueden crear, editar y reproducir listas de reproducción personalizadas.
-
+Clase Plan:
+Descripción: Asigna valores como el tipo de plan contratado, la cantidad de cuentas permitidas y si el tipo de plan es de paga, su objetivo es de uso exclusivo para la reacion de instancias de la clase Cliente
 
 
 Funcionamiento e Implementación
 El sistema opera de la siguiente manera:
 Un usuario accede al sistema y puede elegir entre contratar un plan de suscripción o acceder a uno existente.
 Para contratar un plan, el usuario proporciona su nombre y elige el tipo de plan (Gratuito, Individual, Estudiantes, Familiar).
-Cuando un cliente accede a su plan existente, el sistema verifica su nombre y recupera la instancia de Cliente correspondiente.
-Los usuarios pueden crear cuentas de usuario individuales con nombres únicos y relacionados con su cliente.
+Cuando un cliente accede a su plan existente, el sistema verifica su nombre, busca y recupera la instancia de Cliente correspondiente accediendo al menú para clientes.
+este menú permite a los usuarios crear cuentas de usuario individuales con nombres únicos, eliminarlas y acceder al menu de la cuenta.
 El catálogo de canciones se carga desde un archivo JSON y se almacena en la clase Streaming.
 Los usuarios pueden buscar canciones por título, artista o álbum, lo que implica una búsqueda en el catálogo de canciones.
-La reproducción de canciones se realiza a través de un reproductor y muestra anuncios si el plan del usuario lo permite.
+La busqueda por lista se realiza usando la cuenta que se encuentra abierte en ese momento.
+La reproducción de canciones se realiza a través de un reproductor y muestra si hay notificaciones nuevas y anuncios si el plan del usuario lo permite.
 Los usuarios pueden crear listas de reproducción personalizadas y agregar canciones a ellas.
 
 Descripción y Análisis de las Clases
