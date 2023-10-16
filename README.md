@@ -6,7 +6,7 @@ Alan Torres Aguilar 2223028388
 Gustavo Angel Morales Vigi 2223029054
 
 DISEÑO:
-DiagramaUMLPROYECTO.drawio.png
+
 
 Informe sobre el Sistema de Streaming de Música
 Introducción
