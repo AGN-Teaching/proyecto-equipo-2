@@ -1,18 +1,30 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/XixB-tii)
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-7f7980b617ed060a017424585567c406b6ee15c891e84e1186181d67ecf80aa0.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=12217425)
+
 Informe sobre el Sistema de Streaming de Música
+
 Introducción
 El presente informe se centra en el diseño y desarrollo de un sistema de streaming de música, una plataforma que permite a los usuarios acceder y disfrutar de música en línea. Este proyecto aborda diversos aspectos, desde la gestión de cuentas de usuario hasta la reproducción de canciones y la creación de listas de reproducción personalizadas. A lo largo de este informe, analizaremos en profundidad el problema que intentamos resolver, presentaremos las conclusiones derivadas de nuestro análisis, describiremos en detalle el diseño de la solución, explicaremos cómo funciona el sistema y, finalmente, exploraremos las clases involucradas, sus relaciones y posibles mejoras.
 
 Análisis del Problema
-El problema central al que nos enfrentamos es la creación de un sistema de streaming de música que ofrezca una experiencia completa y atractiva a los usuarios. Esto implica resolver los siguientes desafíos:
-Gestión de Usuarios y Cuentas: Los usuarios deben poder registrarse, iniciar sesión y acceder a sus cuentas de usuario. También deben poder elegir entre diferentes planes de suscripción.
-Catálogo de Música: El sistema debe contener un catálogo de canciones con información detallada, como título, artista y álbum. Los usuarios deben poder buscar y acceder a estas canciones.
-Reproducción de Canciones: Los usuarios deben poder reproducir canciones y, en función de su plan de suscripción, pueden estar sujetos a anuncios publicitarios.
+
+El problema central al que nos enfrentamos es la creación de una aplicacion de un sistema de streaming de música que ofrezca una experiencia completa y atractiva a los usuarios. Esto implica resolver los siguientes desafíos:
+
+Gestión de Usuarios y Cuentas: Los usuarios deben poder registrarse, iniciar sesión y acceder a sus cuentas de usuario. También deben poder elegir entre diferentes planes de suscripción. Entre estos planes incluye el poder crear una cierta cantidad de cuentas/perfiles, ademas de poder eliminar dichas cuentas, estos pueden ser de tipo premium o gratuito, los perfiles premium tienen el privilegio de reproducir musica sin anuncios, mientras que los gratuitos no cuentan con este privilegio.
+
+Catálogo de Música: El sistema debe contener un catálogo de canciones con información detallada, como título, duración, artista y álbum. Los usuarios deben poder buscar y acceder a estas canciones.
+
+Reproducción de Canciones: Los usuarios deben poder reproducir canciones y, en función de su plan de suscripción, pueden estar sujetos a anuncios publicitarios, ademas que, durante la reproducción puedan agregar la cancion a una lista de reproducion nueva o existente.
+
 Listas de Reproducción Personalizadas: Los usuarios deben poder crear y gestionar sus propias listas de reproducción con canciones de su elección.
 
+
 Diseño de la Solución
-La solución propuesta se basa en una arquitectura orientada a objetos y consta de las siguientes clases principales:
+La solución propuesta se basa en una arquitectura orientada a objetos
+
+Podemos destinar una clase para el manejo de las funciones en general, el uso de menús para mostrar las distintas opciones a los usuarios, ademas de contar con un catalogo general de musica, ademas que gestione los usuarios que contrataron el servicio de la aplicacion
+
+La solucion consta de las siguientes clases principales:
 
 Clase Streaming:
 Descripción: Esta clase es el corazón del sistema y coordina todas las operaciones. Gestiona clientes, el catálogo de música y la reproducción de canciones.
