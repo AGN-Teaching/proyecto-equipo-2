@@ -15,6 +15,11 @@ def Main():
 
     # Comienza un bucle while que se ejecutará hasta que 'Salir' sea True
     while not Salir:
+        print()
+        print("VIAL ")
+        print("Una app de streaming de musica sin sonido...")
+        print()
+        
         # Obtiene una lista de clientes desde el servicio de streaming
         lista_clientes = Servicio.getClientes() # Imprime si hay clientes disponibles
         if len(lista_clientes) > 0:

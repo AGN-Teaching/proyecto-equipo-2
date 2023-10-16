@@ -38,47 +38,43 @@ class Cliente():
         # Método para actualizar el estado de pago del cliente
         self.__paga = paga
         
-    def AgregarCuenta(self, cuenta): # verifica si se puede agregar una cuenta, de ser asi la agrega
+    def AgregarCuenta(self): # verifica si se puede agregar una cuenta, de ser asi la agrega
         if self.__numero_de_cuentas_almacenadas < self.__numero_de_cuentas_permitidas:
-            self.__cuentas_plan.append(cuenta)  # Agregar la cuenta a la lista
-            self.__numero_de_cuentas_almacenadas += 1  # Incrementar el contador de cuentas almacenadas
-            print("¡Cuenta creada exitosamente!")
+            
+            nombre_cuenta_nueva = input("Ingresa el nombre de la cuenta nueva: ")  # Solicita el nombre de la cuenta
             print()
+            
+            hay_cuentas = False
+            if len(self.__cuentas_plan) > 0:# Verifica si hay contenido en la lista de cuents 
+                hay_cuentas = True
+                
+            if hay_cuentas:# Si hay contenido se busca si la cuenta existe
+                cuenta_existe = False
+                for cuenta in self.__cuentas_plan:
+                    nombre_cuenta_almacenada = cuenta.getNombre()
+                    if nombre_cuenta_almacenada == nombre_cuenta_nueva:
+                        cuenta_existe = True
+                if cuenta_existe:
+                    print("Ya hay una cuenta registrada con ese nombre")
+                    print()
+                else:
+                    cuenta_nueva = Cuenta(nombre_cuenta_nueva)
+                    self.__cuentas_plan.append(cuenta_nueva)  # Agregar la cuenta a la lista
+                    self.__numero_de_cuentas_almacenadas += 1  # Incrementar el contador de cuentas almacenadas
+                    print("¡Cuenta creada exitosamente!")
+                    print()
+            else:
+                cuenta_nueva = Cuenta(nombre_cuenta_nueva)
+                self.__cuentas_plan.append(cuenta_nueva)  # Agregar la cuenta a la lista
+                self.__numero_de_cuentas_almacenadas += 1  # Incrementar el contador de cuentas almacenadas
+                print("¡Cuenta creada exitosamente!")
+                print()
+                
         else:
             print("Se alcanzó el límite de cuentas, no se puede crear una cuenta nueva")
             print()
 
-    def CrearCuenta(self): # crea cuenta y hace uso del metodo AgregarCuenta
-        nombre_cuenta_nueva = input("Ingresa el nombre de la cuenta nueva: ")  # Solicita el nombre de la cuenta
-        print()
-
-        if len(self.__cuentas_plan) > 0:  # Verifica si el cliente ya tiene cuentas
-            cuenta_existe = False
-            for cuenta in self.__cuentas_plan:
-                nombre_cuenta_almacenada = cuenta.getNombre()
-                if nombre_cuenta_almacenada.lower() == nombre_cuenta_nueva.lower():
-                    cuenta_existe = True
-            if cuenta_existe:
-                print("Ya hay una cuenta registrada con ese nombre")
-                print()
-            else:
-                if self.__paga:  # Comprueba si el cliente tiene un plan de pago activo
-                    cuenta_nueva = Cuenta(nombre_cuenta_nueva)
-                    self.AgregarCuenta(cuenta_nueva)
-                else:
-                    cuenta_nueva = Cuenta(nombre_cuenta_nueva)
-                    self.AgregarCuenta(cuenta_nueva)
-        else:
-            if self.__paga:
-                cuenta_nueva = Cuenta(nombre_cuenta_nueva)
-                self.AgregarCuenta(cuenta_nueva)
-            else:
-                cuenta_nueva = Cuenta(nombre_cuenta_nueva)
-                self.AgregarCuenta(cuenta_nueva)
-        
-        # Método para agregar una cuenta a las cuentas del cliente
-        
-
+    # Funcion para eliminar una cuenta 
     def EliminarCuenta(self):
         hay_cuentas = False
         if len(self.__cuentas_plan) > 0:
@@ -89,15 +85,17 @@ class Cliente():
             print()
         
         if hay_cuentas:
+            # imprime los nombre de los perfiles creados si es que exiten
             print("Perfiles creados: ")
             for cuenta in self.__cuentas_plan:
                 nombre_cuenta = cuenta.getNombre()
                 print(nombre_cuenta)
             print()
+            
             nombre_cuenta_a_borrar = str(input("Ingresa el nombre de la cuenta que desea borrar: "))
             cuenta_borrada = False
             for cuenta in self.__cuentas_plan:
-                if cuenta.getNombre().lower() == nombre_cuenta_a_borrar.lower():
+                if cuenta.getNombre() == nombre_cuenta_a_borrar:
                     self.__cuentas_plan.remove(cuenta)  # Eliminar la cuenta de la lista
                     cuenta_borrada = True
                     self.__numero_de_cuentas_almacenadas = self.__numero_de_cuentas_almacenadas - 1
