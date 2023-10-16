@@ -5,6 +5,9 @@ Alan Torres Aguilar 2223028388
 
 Gustavo Angel Morales Vigi 2223029054
 
+DISEÑO:
+DiagramaUMLPROYECTO.drawio.png
+
 Informe sobre el Sistema de Streaming de Música
 Introducción
 El presente informe se centra en el diseño y desarrollo de un sistema de streaming de música, una plataforma que permite a los usuarios acceder y disfrutar de música en línea. Este proyecto aborda diversos aspectos, desde la gestión de cuentas de usuario hasta la reproducción de canciones y la creación de listas de reproducción personalizadas. A lo largo de este informe, analizaremos en profundidad el problema que intentamos resolver, presentaremos las conclusiones derivadas de nuestro análisis, describiremos en detalle el diseño de la solución, explicaremos cómo funciona el sistema y, finalmente, exploraremos las clases involucradas, sus relaciones y posibles mejoras.
