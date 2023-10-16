@@ -81,6 +81,7 @@ La clase Cuenta tendria relacion de gregacion con la clase Cancion ya que las Ca
 Teniendo todo esto podemos crear el diagrama UML
 
 Diseño UMl
+![Alt text](DiagramaUMLPROYECTO.drawio-1.png)
 
 
 Funcionamiento e Implementación
